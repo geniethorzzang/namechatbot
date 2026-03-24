@@ -14,7 +14,16 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open **[http://localhost:3000](http://localhost:3000)** (또는 `http://127.0.0.1:3000`) — **Network 주소(예: 172.x.x.x)로 열면** HMR WebSocket 오류가 날 수 있습니다.
+
+WebSocket 오류가 계속되면: `npm run dev:webpack` 으로 실행해 보세요.
+
+## Vercel 배포
+
+1. GitHub에 **전체 프로젝트**( `package.json`, `package-lock.json`, `app/`, `next.config.ts` 등)가 푸시되어 있어야 합니다.
+2. Vercel 프로젝트 **Settings → Environment Variables**에 `OPENAI_API_KEY` 를 등록하세요.
+3. Node 버전은 `.nvmrc` / `package.json` 의 `engines` 로 20.x 를 사용합니다.
+4. 프로덕션 빌드는 `next build --webpack` 으로 실행됩니다 (Turbopack 대신 Webpack — Vercel 호환).
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

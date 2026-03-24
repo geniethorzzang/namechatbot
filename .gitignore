@@ -32,10 +32,11 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+# next-env.d.ts — Vercel/CI에서 타입 참조용으로 저장소에 포함하는 것이 안전함
